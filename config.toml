@@ -1,0 +1,43 @@
+baseURL = "https://fryboyter.de/"
+DefaultContentLanguage = "de"
+title = "fryboyter.de"
+theme="GythaOgg"
+rssLimit = 20
+
+[outputs]
+   home = [ "HTML", "JSON", "RSS" ]
+
+[params]
+    mainSections = ["posts"]
+    ghrepo = "https://github.com/Fryboyter/Hugo/"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+[module]
+    [[module.mounts]]
+        source = "themes/GythaOgg/static/css/style.css"
+        target = "assets/css/style.css"
+
+    [[module.mounts]]
+        source = "themes/GythaOgg/static/css/prism.css"
+        target = "assets/css/prism.css"
+
+    [[module.mounts]]
+        source = "themes/GythaOgg/static/js/prism.js"
+        target = "assets/js/prism.js"
+
+[languages]
+    [languages.de]
+        languageName = "Deutsche Version"
+        languageCode = "de"
+        weight = 1
+    [languages.en]
+        languageName = "English version"
+        languageCode = "en"
+        weight = 2
+
+[permalinks]
+    posts = ":slug"
